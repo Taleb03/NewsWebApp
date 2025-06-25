@@ -1,10 +1,10 @@
-# 🗞📰 NovaNews
+# 📰 NovaNews
 
 ![image](https://github.com/user-attachments/assets/23cd3e26-5262-43b4-b4f1-1ded634f0e43)
 
 ## 📝 Overview
 
-**GlobalNews** is a modern, responsive front-end news website built to showcase real-world news content with clean design and intuitive layout. This project emulates a professional media site with sections like World News, Business Narratives, Tech Frontiers, and more.
+**NovaNews** is a modern, responsive front-end news website built to showcase real-world news content with clean design and intuitive layout. This project emulates a professional media site with sections like World News, Business Narratives, Tech Frontiers, and more.
 
 Built using **React**, **Vite**, and **TailwindCSS**, the project emphasizes performance, maintainability, and scalability.
 
@@ -36,7 +36,7 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/YourUsername/GlobalNews-Frontend.git
+   git clone https://github.com/Taleb03/NewsWebApp.git
    ```
    
 2. **Navigate into the project directory:**
