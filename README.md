@@ -68,4 +68,4 @@ To run this project locally, follow these steps:
    ```
    
 ## 👨‍💻 Author
-**🎨 Designed & Developed by Taleb Shaikh**
+**🎨 Designed & Developed by [Taleb Shaikh](https://taleb-shaikh.netlify.app/)**
