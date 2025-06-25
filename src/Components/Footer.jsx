@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="space-y-5">
             <div className="flex items-center">
               <img src="/logo.png" alt="News Logo" className="w-10 h-10 mr-3" />
-              <span className="text-xl font-bold text-white">GlobalNews</span>
+              <span className="text-xl font-bold text-white">NovaNews</span>
             </div>
             <p className="text-slate-400 max-w-xs pt-1">
               Delivering accurate and timely news coverage from around the world
@@ -114,7 +114,7 @@ const Footer = () => {
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-                <span>info@globalnews.com</span>
+                <span>info@novanews.com</span>
               </li>
               <li className="flex items-start pt-5">
                 <svg
@@ -137,7 +137,7 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-4">
           <p className="text-sm text-slate-500">
-            © {new Date().getFullYear()} GlobalNews. All rights reserved.
+            © {new Date().getFullYear()} NovaNews. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             {["Privacy Policy", "Terms of Service", "Cookies"].map((item) => (
