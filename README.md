@@ -1,12 +1,71 @@
-# React + Vite
+# 📰 NovaNews
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![image](https://github.com/user-attachments/assets/23cd3e26-5262-43b4-b4f1-1ded634f0e43)
 
-Currently, two official plugins are available:
+## 📝 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**NovaNews** is a modern, responsive front-end news website built to showcase real-world news content with clean design and intuitive layout. This project emulates a professional media site with sections like World News, Business Narratives, Tech Frontiers, and more.
 
-## Expanding the ESLint configuration
+Built using **React**, **Vite**, and **TailwindCSS**, the project emphasizes performance, maintainability, and scalability.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🌟 Features
+
+- 🌍 **Multi-Section News Layout** – Includes World, Business, Tech, Environment, Sports, and more
+- 💡 **Highlight Sections** – "Tech Spotlight", "Top News", "Business Narratives", etc.
+- 📱 **Fully Responsive** – Optimized for Desktop, Tablet, and Mobile
+- 🎨 **Modern UI** – Utility-first styling with TailwindCSS
+- ⚡ **Fast Dev Experience** – Supercharged by Vite for lightning-fast builds
+- 📩 **Newsletter Subscription Section**
+- 📚 **Footer with Quick Links & Contact Info**
+
+## 🔧 Technologies Used
+
+- ⚛️ **React**
+- ⚡ **Vite**
+- 🎨 **TailwindCSS**
+- 🌐 **HTML5 & CSS3**
+- 🧠 **JavaScript (ES6+)**
+
+## 🎥 Demo
+
+👉 **Live Preview**: [NovaNews](https://your-deployment-link.com)
+
+## 📦 Installation
+
+To run this project locally, follow these steps:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Taleb03/NewsWebApp.git
+   ```
+   
+2. **Navigate into the project directory:**
+   ```bash
+   cd newswebapp
+   ```
+   
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+   or
+   ```bash
+   yarn install
+   ```
+
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   or
+   ```bash
+   yarn dev
+   ```
+
+5. **Open your browser and visit:**
+   ```bash
+   http://localhost:5173
+   ```
+   
+## 👨‍💻 Author
+**🎨 Designed & Developed by [Taleb Shaikh](https://taleb-shaikh.netlify.app/)**
