@@ -28,7 +28,7 @@ Built using **React**, **Vite**, and **TailwindCSS**, the project emphasizes per
 
 ## 🎥 Demo
 
-👉 **Live Preview**: [https://your-deployment-link.com](https://your-deployment-link.com)
+👉 **Live Preview**: [NovaNews](https://your-deployment-link.com)
 
 ## 📦 Installation
 
