@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useRef, useState, useEffect } from "react";
 
 const World = () => {
   const articles = useMemo(
@@ -10,7 +10,7 @@ const World = () => {
         category: "Climate Policy",
         date: "March 15, 2024",
         image:
-          "https://images.unsplash.com/photo-1552799446-159ba9523315?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1552799446-159ba9523315?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
       },
       {
         title: "Breakthrough in Renewable Energy Storage",
@@ -19,7 +19,7 @@ const World = () => {
         category: "Energy",
         date: "March 14, 2024",
         image:
-          "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%D",
+          "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0",
       },
       {
         title: "UN Report Warns of Accelerating Biodiversity Loss",
@@ -28,7 +28,7 @@ const World = () => {
         category: "Ecology",
         date: "March 13, 2024",
         image:
-          "https://images.unsplash.com/photo-1605464574145-6971d5254afe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1605464574145-6971d5254afe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
       },
       {
         title: "Advancements in Global Water Purification Tech",
@@ -37,7 +37,7 @@ const World = () => {
         category: "Technology",
         date: "March 12, 2024",
         image:
-          "https://images.unsplash.com/photo-1617155093730-a8bf47be792d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1617155093730-a8bf47be792d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
       },
       {
         title: "Space Exploration: New Frontiers Unveiled",
@@ -46,11 +46,93 @@ const World = () => {
         category: "Space",
         date: "March 11, 2024",
         image:
-          "https://images.unsplash.com/photo-1654263391025-4c4809a37f5c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1654263391025-4c4809a37f5c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0",
+      },
+      {
+        title: "Global Climate Summit Reaches Historic Agreement",
+        excerpt:
+          "Nations unite to accelerate emissions reductions with new binding targets...",
+        category: "Climate Policy",
+        date: "March 15, 2024",
+        image:
+          "https://images.unsplash.com/photo-1552799446-159ba9523315?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
+      },
+      {
+        title: "Breakthrough in Renewable Energy Storage",
+        excerpt:
+          "New battery technology promises to revolutionize solar energy storage...",
+        category: "Energy",
+        date: "March 14, 2024",
+        image:
+          "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0",
+      },
+      {
+        title: "UN Report Warns of Accelerating Biodiversity Loss",
+        excerpt:
+          "Latest assessment shows 1 million species at risk of extinction...",
+        category: "Ecology",
+        date: "March 13, 2024",
+        image:
+          "https://images.unsplash.com/photo-1605464574145-6971d5254afe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
+      },
+      {
+        title: "Advancements in Global Water Purification Tech",
+        excerpt:
+          "Innovative filters provide clean drinking water to remote communities...",
+        category: "Technology",
+        date: "March 12, 2024",
+        image:
+          "https://images.unsplash.com/photo-1617155093730-a8bf47be792d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
+      },
+      {
+        title: "Space Exploration: New Frontiers Unveiled",
+        excerpt:
+          "Recent missions shed light on distant galaxies and planetary formation...",
+        category: "Space",
+        date: "March 11, 2024",
+        image:
+          "https://images.unsplash.com/photo-1654263391025-4c4809a37f5c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0",
       },
     ],
     []
   );
+
+  const containerRef = useRef(null);
+  const [isMouseInside, setIsMouseInside] = useState(false);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleWheel = (e) => {
+      if (!isMouseInside) return;
+
+      const delta = e.deltaY;
+      const atStart = container.scrollLeft <= 0;
+      const atEnd =
+        container.scrollLeft >=
+        container.scrollWidth - container.clientWidth - 1;
+
+      // Prevent vertical scroll ONLY if horizontal scroll is possible
+      if ((delta < 0 && !atStart) || (delta > 0 && !atEnd)) {
+        e.preventDefault();
+        container.scrollLeft += delta; // Use native deltaY
+      }
+    };
+
+    const handleMouseEnter = () => setIsMouseInside(true);
+    const handleMouseLeave = () => setIsMouseInside(false);
+
+    container.addEventListener("wheel", handleWheel, { passive: false });
+    container.addEventListener("mouseenter", handleMouseEnter);
+    container.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      container.removeEventListener("wheel", handleWheel);
+      container.removeEventListener("mouseenter", handleMouseEnter);
+      container.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, [isMouseInside]);
 
   return (
     <div id="world" className="h-auto bg-slate-100 py-8 sm:py-12 scroll-mt-19">
@@ -64,7 +146,15 @@ const World = () => {
       </div>
 
       <div className="w-full mx-auto px-4 sm:px-8 lg:px-25">
-        <div className="flex gap-15 overflow-x-auto space-x-4 sm:space-x-6 py-4 px-1 hide-scrollbar">
+        <div
+          ref={containerRef}
+          className="flex gap-15 overflow-x-auto space-x-4 sm:space-x-6 py-4 px-1 hide-scrollbar"
+          style={{
+            cursor: isMouseInside ? "default" : "auto",
+            scrollBehavior: "auto",
+            scrollbarWidth: "none",
+          }}
+        >
           {articles.map((article, index) => (
             <article
               key={index}

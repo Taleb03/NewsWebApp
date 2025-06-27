@@ -89,7 +89,7 @@ const Footer = () => {
               Contact Us
             </h3>
             <ul className="space-y-4">
-              <li className="flex items-start pt-2">
+              <li className="flex items-start pt-2 gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 mr-3 mt-0.5 text-slate-500 flex-shrink-0"
@@ -104,7 +104,7 @@ const Footer = () => {
                 </svg>
                 <span>Ahmedabad, Gujarat</span>
               </li>
-              <li className="flex items-start pt-5">
+              <li className="flex items-start pt-5 gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 mr-3 mt-0.5 text-slate-500 flex-shrink-0"
@@ -116,7 +116,7 @@ const Footer = () => {
                 </svg>
                 <span>info@novanews.com</span>
               </li>
-              <li className="flex items-start pt-5">
+              <li className="flex items-start pt-5 gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 mr-3 mt-0.5 text-slate-500 flex-shrink-0"
